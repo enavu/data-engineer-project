@@ -26,7 +26,6 @@ def manipData():
 
 ###Request
 def companyDetails(data):
-    print("###############Getting zip from s3 bucket with request, unzipping and setting 6 files to list of dataframes ######")
     movies = data
     
     ##budget/revenue/profit/average popularity
@@ -36,12 +35,10 @@ def companyDetails(data):
     grouped_df = movies.groupby("year").aggregate(function_dict)
     
     ##pandas to csv
-    logging.info("File created and saved here - ")
-    grouped_df.to_csv("movies_analysis/data/company_details.csv", index=False)
+    grouped_df.to_csv("movies_analysis/data/company_details.csv")
     logging.info("File created and saved here - movies_analysis/data/company_details.csv")
     
 def movieGenreDetails(data):
-    print("###############Getting zip from s3 bucket with request, unzipping and setting 6 files to list of dataframes ######")
     movies = data
     ##transforming and designing data 
     movies['year'] = movies['year'].astype(str)
@@ -76,5 +73,5 @@ def movieGenreDetails(data):
                             ")a where rn = 1")
     
     ##pandas to csv
-    genre.to_csv("movies_analysis/data/genre_details.csv",  index=False)
-    top_genre.to_csv("movies_analysis/data/genre_top.csv",  index=False)
+    genre.to_csv("movies_analysis/data/genre_details.csv")
+    top_genre.to_csv("movies_analysis/data/genre_top.csv")
