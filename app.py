@@ -1,14 +1,14 @@
 from movies_analysis import *
-import json 
 import pandas as pd 
-from flatten_json import flatten
-print("Stuff")
+import logging.config
 
+logging.config.fileConfig('logging.ini', disable_existing_loggers=False)
+logger = logging.getLogger(__name__)
+
+## TODO ##
 ### Request the user to select a data set - currently only care about movies set
-## Generate list of availabilities but only display movies - designed 
-## Then display columns of movies to see which company details they are interested in
-
-
+### Generate list of availabilities but only display movies - designed 
+### Then display columns of movies to see which company details they are interested in
 ### Movie Genre Details
 ### Improve with options of other columns as well
 ### >>> list_of_dfs['movies_metadata'].columns
@@ -19,6 +19,10 @@ print("Stuff")
 #        'spoken_languages', 'status', 'tagline', 'title', 'video',
 #        'vote_average', 'vote_count'],
 
-#companyDetails()
+logging.info('We will be running Company Details')
 
-movieGenreDetails()
+data = manipData()
+
+companyDetails(data)
+
+movieGenreDetails(data)

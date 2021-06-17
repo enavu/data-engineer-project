@@ -2,11 +2,16 @@ import pandas as pd
 import zipfile
 import requests
 from io import BytesIO
+import logging.config
+
+logging.config.fileConfig('logging.ini', disable_existing_loggers=False)
 
 full_url = " https://s3-us-west-2.amazonaws.com/com.guild.us-west-2.public-data/project-data/the-movies-dataset.zip"
+logging.info('The data is being grabbed here: {}'.format(full_url))
 
 ## * Input: should take a s3 endpoint to the file as a positional argument 
 def get_data():
+    ## TODO Try catch here with logging
     r = requests.get(full_url, allow_redirects=True)
     z = zipfile.ZipFile(BytesIO(r.content))   
     list_of_dfs = {}

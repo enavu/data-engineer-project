@@ -2,6 +2,9 @@ import pandas as pd
 import datetime as dt
 from .get_data import *
 import pandasql as ps
+import logging.config
+
+logging.config.fileConfig('logging.ini', disable_existing_loggers=False)
 
 def manipData():
     dfs = get_data()
@@ -22,9 +25,9 @@ def manipData():
     return movies
 
 ###Request
-def companyDetails():
+def companyDetails(data):
     print("###############Getting zip from s3 bucket with request, unzipping and setting 6 files to list of dataframes ######")
-    movies = manipData()
+    movies = data
     
     ##budget/revenue/profit/average popularity
     ## exmaple in python
@@ -33,11 +36,13 @@ def companyDetails():
     grouped_df = movies.groupby("year").aggregate(function_dict)
     
     ##pandas to csv
+    logging.info("File created and saved here - ")
     grouped_df.to_csv("movies_analysis/data/company_details.csv", index=False)
-
-def movieGenreDetails():
+    logging.info("File created and saved here - movies_analysis/data/company_details.csv")
+    
+def movieGenreDetails(data):
     print("###############Getting zip from s3 bucket with request, unzipping and setting 6 files to list of dataframes ######")
-    movies = manipData()
+    movies = data
     ##transforming and designing data 
     movies['year'] = movies['year'].astype(str)
     ## Two issues to correct to be able to apply explode and pd.series
