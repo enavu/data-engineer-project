@@ -63,9 +63,9 @@ Clone this repo and provide the final tarball of the finished product. The code 
 ![alt text](https://github.com/enavu/data-engineer-project/blob/master/movies_analysis/images/erdiagram.png)
 
 Please provide a data model that meets the following requirements:
-* Document describing modeling decisions
+* Modeling these files were based on ids and kaggle documentation and same id names.
 * Relational ERD diagram (included relationships) 
-* Evolvable for future needs (don’t just aggregate the exact questions) 
+* Evolvable for future needs (don’t just aggregate the exact questions): Ran out of time for this - but this is in my to do list, on being able to enhance the requested analytics.
 
 ## Design: Scaling and maintain the system.
 * Current Pandas switch to pyspark dataframes Job: AWS, Terraform module implementation, lambda, and emr for logging.  - Stack Python, pyspark, and common tools.
@@ -74,6 +74,7 @@ Please provide a data model that meets the following requirements:
 * Utilize systems such as data dog as well for notifications
 
 Other potential designs:
+
 ![alt text](https://github.com/enavu/data-engineer-project/blob/master/movies_analysis/images/bigdataanalytics.png)
 ![alt text](https://github.com/enavu/data-engineer-project/blob/master/movies_analysis/images/datawarehousing.png)
 * Data reprocessing:
