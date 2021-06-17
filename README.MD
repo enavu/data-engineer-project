@@ -16,7 +16,7 @@ These are the things that I wished I had time for:
 
 * Open and unzip project
 * cd into root
-* run cmd with -e so we don't have to redo instsall, this will use setup.py pip install -e .
+* run cmd with -e so we don't have to redo instsall, this will use setup.py pip install -e . Should you run into permissions issues, please use sudo
 * run cmd python app.py
 * You will get 3 files in the data folder: company_details.csv, genre_details.csv, genre_top.csv
 * caveats - need python 3+
