@@ -46,7 +46,8 @@ Clone this repo and provide the final tarball of the finished product. The code 
 
 ## Data Model
 
-![Optional Text](/movies_analysis/images/movies_analysis.png)
+![alt text](https://github.com/enavu/data-engineer-project/blob/master/movies_analysis/images/erdiagram.png)
+
 Please provide a data model that meets the following requirements:
 * Document describing modeling decisions
 * Relational ERD diagram (included relationships) 
