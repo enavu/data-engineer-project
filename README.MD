@@ -1,12 +1,16 @@
+
 # Overview
-The goal of this project is to get an idea of:
-* Your ability to work with and grok data 
-* Your software engineering skill 
-* Your data pipeline design skill 
 
+Data used https://s3-us-west-2.amazonaws.com/com.guild.us-west-2.public-data/project-data/the-movies-dataset.zip
 
-The data used for this project will be The Movies Dataset (pulled from https://www.kaggle.com/rounakbanik/the-movies-dataset).
-Please use the copy of the data set provided at https://s3-us-west-2.amazonaws.com/com.guild.us-west-2.public-data/project-data/the-movies-dataset.zip
+The summary of this project was to take the movie data set and understand how the data was generated, perform transformation on cleaned and primed data, and be able to perform analysis on the movies by genre or year but not limited to it.
+
+These are the things that I wished I had time for:
+
+* Input designed so we can list each metric besides genre that are along the lines of: adult, belongs_to_collection, budget, genres, homepage, id, imdb_id, original_language, original_title, overview, popularity, poster_path, production_companies, production_countries, release_date, revenue, runtime, spoken_languages, status, tagline, title, video, vote_average, vote_count. I have implemented it here:  https://github.com/enavu/sdr_avail/blob/main/sdr_availability/input_prompts.py
+* logging
+* try catch on being able to connect to the s3 bucket to get 
+
  
 # Deliverables
 There are three goals to this project:
@@ -41,6 +45,8 @@ Clone this repo and provide the final tarball of the finished product. The code 
   * Error log file
 
 ## Data Model
+
+![Optional Text](/movies_analysis/images/movies_analysis.png)
 Please provide a data model that meets the following requirements:
 * Document describing modeling decisions
 * Relational ERD diagram (included relationships) 
